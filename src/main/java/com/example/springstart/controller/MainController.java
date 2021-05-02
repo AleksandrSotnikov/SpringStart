@@ -1,4 +1,4 @@
-package com.example.springstart;
+package com.example.springstart.controller;
 
 import com.example.springstart.domain.Message;
 import com.example.springstart.repositories.MessageRepositories;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Map;
 
 @Controller
-public class GreetingController {
+public class MainController {
 
     @Autowired
     private MessageRepositories messageRepositories;
@@ -53,7 +53,7 @@ public class GreetingController {
         model.put("messages", messages);
         return "messages";
     }
-
+    
     @PostMapping("filter")
     public String add(@RequestParam String filter, Map<String, Object> model) {
         Iterable<Message> messages;
