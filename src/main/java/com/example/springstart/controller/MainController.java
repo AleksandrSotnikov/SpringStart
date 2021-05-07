@@ -17,7 +17,6 @@ public class MainController {
     @Autowired
     private MessageRepositories messageRepositories;
 
-
     @GetMapping("/greeting")
     public String greeting(
             @RequestParam(name = "name", required = false, defaultValue = "World") String name,
@@ -53,7 +52,7 @@ public class MainController {
         model.put("messages", messages);
         return "messages";
     }
-    
+
     @PostMapping("filter")
     public String add(@RequestParam String filter, Map<String, Object> model) {
         Iterable<Message> messages;
